@@ -17,6 +17,9 @@ set(LIB_SOURCE_FILES
 set(UNIT_TEST_SOURCE_FILES
         tests/cauchy_256_tests.cpp
         )
+set(BASIC_TEST_SOURCE_FILES
+        tests/crs_basic_test.cpp
+        )
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -34,4 +37,6 @@ include_directories(.)
 add_library(longhair STATIC ${LIB_SOURCE_FILES})
 
 add_executable(longhair_test ${UNIT_TEST_SOURCE_FILES})
+add_executable(crs_basic_test ${BASIC_TEST_SOURCE_FILES})
 target_link_libraries(longhair_test longhair)
+target_link_libraries(crs_basic_test longhair)
